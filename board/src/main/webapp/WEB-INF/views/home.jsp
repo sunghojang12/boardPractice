@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>
-	Hello world2!  
+	내용 변경
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
