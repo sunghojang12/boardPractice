@@ -33,10 +33,15 @@ public class BoardController {
 	}
 	@PostMapping("/write")
 	public String postWrite(BoardVO vo) throws Exception {
-		System.out.println("들어왔나?"+vo);
+		
 		service.write(vo);
 		
 		return "redirect:/board/list";
-		
+	}
+	@GetMapping("/view")
+	public String getView(int bno, Model model) throws Exception {
+		BoardVO vo = service.view(bno);
+		model.addAttribute("view",vo);
+		return "board/view";
 	}
 }

@@ -17,7 +17,7 @@
 		text-decoration: none;
 	}
 	a:hover {
-		color : gray;
+		color : blue;
 		
 	}
 	a:visited {
@@ -43,7 +43,7 @@
 		<c:forEach items="${list}" var="list">
 			<tr>
 				<td>${list.bno}</td>
-				<td>${list.title}</td>
+				<td><a href="/board/view?bno=${list.bno}">${list.title}</a></td>
 				<td> <fmt:formatDate value="${list.regDate}" pattern="yy-MM-dd hh:mm"/></td>
 				<td>${list.writer}</td>
 				<td>${list.viewCnt}</td>

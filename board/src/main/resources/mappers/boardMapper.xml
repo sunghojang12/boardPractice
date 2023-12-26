@@ -17,5 +17,13 @@
 		values
 			(#{title}, #{content}, #{writer})
 	</insert>
+	<select id="view" parameterType="int" resultType="com.board.domain.BoardVO">
+		select
+			*
+		from
+			board
+		where 
+			bno = #{bno}
+	</select>
 	
 </mapper>
