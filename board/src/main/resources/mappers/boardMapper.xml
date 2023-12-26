@@ -5,19 +5,19 @@
 <mapper namespace="com.board.mappers.board">
 
 	<!-- 게시물 목록 -->
-	<select id="list" resultType="com.board.domain.BoardVO">
+	<select id="list" resultType="BoardVO">
 		select
 			bno, title, content, writer, regDate, viewCnt
 		from board
 	</select>
 	<!-- 게시물 작성 -->
-	<insert id="write" parameterType="com.board.domain.BoardVO">
+	<insert id="write" parameterType="BoardVO">
 		insert into board
 			(title, content, writer)
 		values
 			(#{title}, #{content}, #{writer})
 	</insert>
-	<select id="view" parameterType="int" resultType="com.board.domain.BoardVO">
+	<select id="view" parameterType="int" resultType="BoardVO">
 		select
 			*
 		from
@@ -25,7 +25,7 @@
 		where 
 			bno = #{bno}
 	</select>
-	<select id="getModify" parameterType="int" resultType="com.board.domain.BoardVO">
+	<select id="getModify" parameterType="int" resultType="BoardVO">
 		select
 			*
 		from
@@ -33,7 +33,7 @@
 		where 
 			bno = #{bno}
 	</select>
-	<update id="modify" parameterType="com.board.domain.BoardVO">
+	<update id="modify" parameterType="BoardVO">
 		update board
 		set
 			title = #{title},

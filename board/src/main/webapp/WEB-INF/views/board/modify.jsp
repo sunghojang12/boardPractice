@@ -41,7 +41,7 @@
     <label>내용</label>
     <textarea cols="50" rows="5" class="form-control" name="content">${vo.content}</textarea><br/>
     <div style="text-align: center">
-	    <button type="submit" class="btn btn-default">작성</button>
+	    <button type="submit" class="btn btn-default">수정</button>
 	    <button class="btn btn-default"><a href="../board/list">리스트</a></button>
     </div>
   </form>
