@@ -40,8 +40,22 @@ public class BoardController {
 	}
 	@GetMapping("/view")
 	public String getView(int bno, Model model) throws Exception {
+		
 		BoardVO vo = service.view(bno);
 		model.addAttribute("view",vo);
 		return "board/view";
+	}
+	@GetMapping("/getModify")
+	public String getModify(int bno, Model model) throws Exception{
+		
+		BoardVO vo = service.getModify(bno);
+		model.addAttribute("vo", vo);
+		return "board/modify";
+	}
+	@PostMapping("/modify")
+	public String modify(BoardVO vo) throws Exception{
+		
+		service.modify(vo);
+		return "redirect:/board/view?bno="+vo.getBno();
 	}
 }

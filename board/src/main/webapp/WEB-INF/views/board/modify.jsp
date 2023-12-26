@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<title>게시물 조회</title>
+<title>게시물 작성</title>
 <style type="text/css">
 	a {
 		color : black;
@@ -27,23 +27,24 @@
 <body>
 
 <div class="container">
-<h2>게시물 조회</h2> 
-  <form>
+<h2>수정화면</h2> 
+  <form action="../board/modify" method="post">
+  	<input type="hidden" name="bno" value="${vo.bno}"/>
     <div class="form-group">
       <label >제목</label>
-      <input type="text" class="form-control" name="title" value="${view.title}" readonly/>
+      <input type="text" class="form-control" name="title" value="${vo.title}"/>
     </div>
     <div class="form-group">
       <label for="writer">작성자</label>
-      <input type="text" class="form-control" name="writer" value="${view.writer}" readonly/>
+      <input type="text" class="form-control"  name="writer" value="${vo.writer}" readonly/>
     </div>
     <label>내용</label>
-    <textarea cols="50" rows="5" class="form-control" name="content" readonly>${view.content}</textarea><br/>
+    <textarea cols="50" rows="5" class="form-control" name="content">${vo.content}</textarea><br/>
+    <div style="text-align: center">
+	    <button type="submit" class="btn btn-default">작성</button>
+	    <button class="btn btn-default"><a href="../board/list">리스트</a></button>
+    </div>
   </form>
-  <div style="text-align: center">
-  	<button class="btn btn-default"><a href="../board/getModify?bno=${view.bno}">수정화면</a></button>
-  	<button class="btn btn-default"><a href="../board/list">리스트</a></button>
-  </div>
 </div>
 </body>
 </html>

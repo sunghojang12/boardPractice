@@ -13,7 +13,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
 	a:link {
-		color : black;
+		color : gray;
 		text-decoration: none;
 	}
 	a:hover {
@@ -21,7 +21,7 @@
 		
 	}
 	a:visited {
-		color : black;
+		color : gray;
 	}
 </style>
 <title>게시물 목록</title>
