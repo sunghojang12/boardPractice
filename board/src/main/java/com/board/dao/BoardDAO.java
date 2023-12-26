@@ -15,6 +15,8 @@ public interface BoardDAO {
 	public BoardVO getModify(int bno) throws Exception;
 	// 수정
 	public void modify(BoardVO vo) throws Exception;
+	// 삭제
+	public void delete(int bno) throws Exception;
 	
 	
 }

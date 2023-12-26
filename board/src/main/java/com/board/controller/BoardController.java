@@ -58,4 +58,10 @@ public class BoardController {
 		service.modify(vo);
 		return "redirect:/board/view?bno="+vo.getBno();
 	}
+	@GetMapping("/delete")
+	public String delete(int bno) throws Exception{
+		
+		service.delete(bno);
+		return "redirect:/board/list";
+	}
 }

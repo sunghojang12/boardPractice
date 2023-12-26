@@ -13,15 +13,15 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
 	a:link {
-		color : gray;
+		color : black;
 		text-decoration: none;
 	}
 	a:hover {
-		color : blue;
+		color : black;
 		
 	}
 	a:visited {
-		color : gray;
+		color : black;
 	}
 </style>
 <title>게시물 목록</title>
@@ -37,6 +37,7 @@
 			<th>작성일</th>
 			<th>작성자</th>
 			<th>조회수</th>
+			<th>삭제</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -47,6 +48,8 @@
 				<td> <fmt:formatDate value="${list.regDate}" pattern="yy-MM-dd hh:mm"/></td>
 				<td>${list.writer}</td>
 				<td>${list.viewCnt}</td>
+				<td><button class="btn btn-danger btn-sm"><a href="../board/delete?bno=${list.bno}">삭제</a></button></td>
+				
 			</tr>
 		</c:forEach>
 	</tbody>
