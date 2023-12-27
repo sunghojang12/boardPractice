@@ -12,20 +12,17 @@
 <title>게시물 조회</title>
 <style type="text/css">
 	a {
-		color : black;
+		color : white;
 		text-decoration: none;
 	}
 	a:hover {
 		color : gray;
 		text-decoration: none;
 	}
-	a:visited {
-		color : black;
-	}
 </style>
 </head>
 <body>
-
+<jsp:include page="/WEB-INF/views/nav.jsp"/>
 <div class="container">
 <h2>게시물 조회</h2> 
   <form>
@@ -41,8 +38,8 @@
     <textarea cols="50" rows="5" class="form-control" name="content" readonly>${view.content}</textarea><br/>
   </form>
   <div style="text-align: center">
-  	<button class="btn btn-default"><a href="../board/getModify?bno=${view.bno}">수정화면</a></button>
-  	<button class="btn btn-default"><a href="../board/list">리스트</a></button>
+  	<button class="btn btn-warning"><a href="../board/getModify?bno=${view.bno}">수정화면</a></button>
+  	<button class="btn btn-primary"><a href="../board/listPage?num=1">리스트</a></button>
   </div>
 </div>
 </body>

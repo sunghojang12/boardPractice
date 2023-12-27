@@ -25,7 +25,7 @@
 </style>
 </head>
 <body>
-
+<jsp:include page="/WEB-INF/views/nav.jsp"/>
 <div class="container">
 <h2>수정화면</h2> 
   <form action="../board/modify" method="post">
@@ -41,8 +41,8 @@
     <label>내용</label>
     <textarea cols="50" rows="5" class="form-control" name="content">${vo.content}</textarea><br/>
     <div style="text-align: center">
-	    <button type="submit" class="btn btn-default">수정</button>
-	    <button class="btn btn-default"><a href="../board/list">리스트</a></button>
+	    <button type="submit" class="btn btn-warning">수정</button>
+	    <button class="btn btn-primary"><a href="../board/list" style="color:white">리스트</a></button>
     </div>
   </form>
 </div>

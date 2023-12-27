@@ -6,10 +6,7 @@
 	<title>Home</title>
 </head>
 <body>
-<h1>
-	내용 변경
-</h1>
+<jsp:include page="/WEB-INF/views/nav.jsp"/>
 
-<P>  The time on the server is ${serverTime}. </P>
 </body>
 </html>

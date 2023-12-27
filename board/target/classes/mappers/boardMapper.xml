@@ -17,6 +17,7 @@
 		values
 			(#{title}, #{content}, #{writer})
 	</insert>
+	<!-- 게시물 상세화면 -->
 	<select id="view" parameterType="int" resultType="BoardVO">
 		select
 			*
@@ -25,6 +26,7 @@
 		where 
 			bno = #{bno}
 	</select>
+	<!-- 게시물 수정화면 -->
 	<select id="getModify" parameterType="int" resultType="BoardVO">
 		select
 			*
@@ -33,6 +35,7 @@
 		where 
 			bno = #{bno}
 	</select>
+	<!-- 게시물 수정 -->
 	<update id="modify" parameterType="BoardVO">
 		update board
 		set
@@ -41,9 +44,29 @@
 		where
 			bno = #{bno}
 	</update>
+	<!-- 게시물 삭제 -->
 	<delete id="delete" parameterType="int">
 		delete 
 		from board
 		where bno = #{bno}	
 	</delete>
+	<!-- 게시물 총 갯수 -->
+	<select id="count" resultType="int">
+		select 
+			count(bno)
+		from
+			board
+	</select>
+	<!-- 게시물 목록 + 페이징 -->
+	<select id="listPage" parameterType="hashMap" resultType="BoardVO">
+		select
+			*
+		from
+			board
+		order by bno desc
+		limit #{displayPost}, #{postNum}
+	</select>
+	
+	
+	
 </mapper>

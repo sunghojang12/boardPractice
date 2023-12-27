@@ -12,7 +12,7 @@
 <title>게시물 작성</title>
 </head>
 <body>
-
+<jsp:include page="/WEB-INF/views/nav.jsp"/>
 <div class="container">
 <h2>작성양식</h2> 
   <form action="../board/write" method="post">
@@ -27,7 +27,8 @@
     <label>내용</label>
     <textarea cols="50" rows="5" class="form-control" name="content"></textarea><br/>
     
-    <button type="submit" class="btn btn-default">작성</button>
+    <button type="submit" class="btn btn-primary">작성</button>
+    <button class="btn btn-primary"><a href="../board/listPage?num=1" style="color:white">리스트</a></button>
   </form>
 </div>
 </body>
